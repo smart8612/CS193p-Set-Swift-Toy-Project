@@ -8,12 +8,10 @@
 import SwiftUI
 
 struct Diamond: Shape {
-    var size: CGSize
-    
     func path(in rect: CGRect) -> Path {
         let center = CGPoint(x: rect.midX, y: rect.midY)
-        let width = size.width
-        let height = size.height
+        let width = rect.size.width / 2
+        let height = rect.size.height / 2
         let points = [
             CGPoint(x: center.x + width, y: center.y),
             CGPoint(x: center.x, y: center.y + height),
@@ -34,7 +32,6 @@ struct Diamond: Shape {
 
 struct Diamond_Previews: PreviewProvider {
     static var previews: some View {
-        Diamond(size: CGSize(width: 150, height: 120))
-            .stroke(lineWidth: 3)
+        Diamond().stroke(lineWidth: 3)
     }
 }
