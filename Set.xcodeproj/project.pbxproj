@@ -13,6 +13,7 @@
 		C12B9C8226D9DC6000FDC508 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C12B9C8126D9DC6000FDC508 /* Preview Assets.xcassets */; };
 		C12B9C8A26D9DFA400FDC508 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9C8926D9DFA400FDC508 /* SetGame.swift */; };
 		C12B9C9026D9E71000FDC508 /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9C8F26D9E71000FDC508 /* Diamond.swift */; };
+		C12B9C9526DA1C6200FDC508 /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9C9426DA1C6200FDC508 /* Stripe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C12B9C8326D9DC6000FDC508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C12B9C8926D9DFA400FDC508 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 		C12B9C8F26D9E71000FDC508 /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
+		C12B9C9426DA1C6200FDC508 /* Stripe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		C12B9C7926D9DC5C00FDC508 /* Set */ = {
 			isa = PBXGroup;
 			children = (
+				C12B9C9326DA177900FDC508 /* Extensions */,
 				C12B9C8E26D9E4DE00FDC508 /* ViewModel */,
 				C12B9C8D26D9E4D900FDC508 /* Model */,
 				C12B9C8C26D9E4D000FDC508 /* Views */,
@@ -88,6 +91,7 @@
 			children = (
 				C12B9C7C26D9DC5D00FDC508 /* ContentView.swift */,
 				C12B9C8F26D9E71000FDC508 /* Diamond.swift */,
+				C12B9C9426DA1C6200FDC508 /* Stripe.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,6 +109,13 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C12B9C9326DA177900FDC508 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C12B9C9026D9E71000FDC508 /* Diamond.swift in Sources */,
+				C12B9C9526DA1C6200FDC508 /* Stripe.swift in Sources */,
 				C12B9C7D26D9DC5D00FDC508 /* ContentView.swift in Sources */,
 				C12B9C8A26D9DFA400FDC508 /* SetGame.swift in Sources */,
 				C12B9C7B26D9DC5D00FDC508 /* SetApp.swift in Sources */,

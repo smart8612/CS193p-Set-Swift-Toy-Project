@@ -25,9 +25,8 @@ struct Diamond: Shape {
         var p = Path()
         
         p.move(to: points.first!)
-        for point in points {
-            p.addLine(to: point)
-        }
+        points.forEach { p.addLine(to: $0) }
+        p.closeSubpath()
         
         return p
     }

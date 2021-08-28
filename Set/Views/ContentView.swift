@@ -12,6 +12,26 @@ struct ContentView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .strokeBorder(lineWidth: 5)
+            VStack(spacing: 0) {
+                stripeDiamond
+                stripeDiamond
+                stripeDiamond
+            }
+        }
+    }
+    
+    var stripeDiamond: some View {
+        GeometryReader { geometry in
+            ZStack {
+                let size = CGSize(
+                    width: geometry.size.width / 2.5,
+                    height: geometry.size.height / 3)
+                
+                Stripe(numberOfStripes: 100)
+                    .clipShape(Diamond(size: size))
+                Diamond(size: size)
+                    .stroke(Color.black, lineWidth: 10.0)
+            }
         }
     }
 }
