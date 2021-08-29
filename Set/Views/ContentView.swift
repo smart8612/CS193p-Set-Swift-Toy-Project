@@ -25,6 +25,7 @@ struct ContentView: View {
             .clipShape(Diamond())
             .overlay(Diamond()
             .stroke(Color.black, lineWidth: 10.0))
+            .padding()
     }
     
     var stripeCircle: some View {
@@ -32,6 +33,7 @@ struct ContentView: View {
             .clipShape(Capsule())
             .overlay(Capsule()
             .stroke(Color.black, lineWidth: 10.0))
+            .padding()
     }
     
 }
