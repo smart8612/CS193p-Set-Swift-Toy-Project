@@ -18,7 +18,7 @@ extension Shape {
     ///   - numberOfLines: the number of background lines (default: 100)
     ///   - borderWidth: shape border width (default: 25)
     /// - Returns: some View
-    func stripe(numberOfLines: Int = 100, borderWidth: CGFloat = 25) -> some View {
+    func stripe(numberOfLines: Int = 25, borderWidth: CGFloat = 5) -> some View {
         Stripe(numberOfStripes: numberOfLines)
             .clipShape(self)
             .overlay(self
