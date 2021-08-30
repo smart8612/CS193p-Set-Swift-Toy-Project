@@ -15,6 +15,7 @@
 		C12B9C9026D9E71000FDC508 /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9C8F26D9E71000FDC508 /* Diamond.swift */; };
 		C12B9C9526DA1C6200FDC508 /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9C9426DA1C6200FDC508 /* Stripe.swift */; };
 		C12B9C9726DA638F00FDC508 /* Squiggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9C9626DA638E00FDC508 /* Squiggle.swift */; };
+		C179078826DC966900B301F2 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179078726DC966900B301F2 /* ViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C12B9C8F26D9E71000FDC508 /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
 		C12B9C9426DA1C6200FDC508 /* Stripe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
 		C12B9C9626DA638E00FDC508 /* Squiggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Squiggle.swift; sourceTree = "<group>"; };
+		C179078726DC966900B301F2 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +93,8 @@
 		C12B9C8C26D9E4D000FDC508 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C18E245F26DC903A00D4CA49 /* Shape */,
 				C12B9C7C26D9DC5D00FDC508 /* SetGameView.swift */,
-				C12B9C8F26D9E71000FDC508 /* Diamond.swift */,
-				C12B9C9426DA1C6200FDC508 /* Stripe.swift */,
-				C12B9C9626DA638E00FDC508 /* Squiggle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,8 +117,19 @@
 		C12B9C9326DA177900FDC508 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C179078726DC966900B301F2 /* ViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C18E245F26DC903A00D4CA49 /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				C12B9C9626DA638E00FDC508 /* Squiggle.swift */,
+				C12B9C8F26D9E71000FDC508 /* Diamond.swift */,
+				C12B9C9426DA1C6200FDC508 /* Stripe.swift */,
+			);
+			path = Shape;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 				C12B9C9726DA638F00FDC508 /* Squiggle.swift in Sources */,
 				C12B9C9026D9E71000FDC508 /* Diamond.swift in Sources */,
 				C12B9C9526DA1C6200FDC508 /* Stripe.swift in Sources */,
+				C179078826DC966900B301F2 /* ViewExtension.swift in Sources */,
 				C12B9C7D26D9DC5D00FDC508 /* SetGameView.swift in Sources */,
 				C12B9C8A26D9DFA400FDC508 /* SetGame.swift in Sources */,
 				C12B9C7B26D9DC5D00FDC508 /* SetApp.swift in Sources */,
