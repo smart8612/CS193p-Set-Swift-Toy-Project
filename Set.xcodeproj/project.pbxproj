@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C12B9C7B26D9DC5D00FDC508 /* SetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9C7A26D9DC5D00FDC508 /* SetApp.swift */; };
-		C12B9C7D26D9DC5D00FDC508 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9C7C26D9DC5D00FDC508 /* ContentView.swift */; };
+		C12B9C7D26D9DC5D00FDC508 /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9C7C26D9DC5D00FDC508 /* SetGameView.swift */; };
 		C12B9C7F26D9DC6000FDC508 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C12B9C7E26D9DC6000FDC508 /* Assets.xcassets */; };
 		C12B9C8226D9DC6000FDC508 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C12B9C8126D9DC6000FDC508 /* Preview Assets.xcassets */; };
 		C12B9C8A26D9DFA400FDC508 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9C8926D9DFA400FDC508 /* SetGame.swift */; };
@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		C12B9C7726D9DC5C00FDC508 /* Set.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Set.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12B9C7A26D9DC5D00FDC508 /* SetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetApp.swift; sourceTree = "<group>"; };
-		C12B9C7C26D9DC5D00FDC508 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C12B9C7C26D9DC5D00FDC508 /* SetGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
 		C12B9C7E26D9DC6000FDC508 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C12B9C8126D9DC6000FDC508 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C12B9C8326D9DC6000FDC508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		C12B9C8C26D9E4D000FDC508 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C12B9C7C26D9DC5D00FDC508 /* ContentView.swift */,
+				C12B9C7C26D9DC5D00FDC508 /* SetGameView.swift */,
 				C12B9C8F26D9E71000FDC508 /* Diamond.swift */,
 				C12B9C9426DA1C6200FDC508 /* Stripe.swift */,
 				C12B9C9626DA638E00FDC508 /* Squiggle.swift */,
@@ -193,7 +193,7 @@
 				C12B9C9726DA638F00FDC508 /* Squiggle.swift in Sources */,
 				C12B9C9026D9E71000FDC508 /* Diamond.swift in Sources */,
 				C12B9C9526DA1C6200FDC508 /* Stripe.swift in Sources */,
-				C12B9C7D26D9DC5D00FDC508 /* ContentView.swift in Sources */,
+				C12B9C7D26D9DC5D00FDC508 /* SetGameView.swift in Sources */,
 				C12B9C8A26D9DFA400FDC508 /* SetGame.swift in Sources */,
 				C12B9C7B26D9DC5D00FDC508 /* SetApp.swift in Sources */,
 			);
