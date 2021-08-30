@@ -12,10 +12,10 @@ struct SetGameView: View {
         HStack {
             CardView(
                 cardCount: .three,
-                cardShape: .diamond,
-                cardShading: .striped,
-                cardColor: .blue)
-                .foregroundColor(.red)
+                cardShape: .squiggle,
+                cardShading: .open,
+                cardColor: .blue
+            )
         }
     }
 }
@@ -34,15 +34,58 @@ struct CardView: View {
                 .strokeBorder(lineWidth: 5)
             VStack(spacing: 0) {
                 ForEach(0..<cardCount.rawValue) { _ in
-                    Circle().stripe()
-                        .aspectRatio(2, contentMode: .fit)
-                        .padding()
+                    switch cardShape {
+                    case CardShape.diamond:
+                        switch cardShading {
+                        case CardShading.solid:
+                            Diamond().fill()
+                                .aspectRatio(2, contentMode: .fit)
+                                .padding()
+                        case CardShading.striped:
+                            Diamond().stripe()
+                                .aspectRatio(2, contentMode: .fit)
+                                .padding()
+                        case CardShading.open:
+                            Diamond().stroke()
+                                .aspectRatio(2, contentMode: .fit)
+                                .padding()
+                        }
+                    case CardShape.oval:
+                        switch cardShading {
+                        case CardShading.solid:
+                            Capsule().fill()
+                                .aspectRatio(2, contentMode: .fit)
+                                .padding()
+                        case CardShading.striped:
+                            Capsule().stripe()
+                                .aspectRatio(2, contentMode: .fit)
+                                .padding()
+                        case CardShading.open:
+                            Capsule().stroke()
+                                .aspectRatio(2, contentMode: .fit)
+                                .padding()
+                        }
+                    case CardShape.squiggle:
+                        switch cardShading {
+                        case CardShading.solid:
+                            Squiggle().fill()
+                                .aspectRatio(2, contentMode: .fit)
+                                .padding()
+                        case CardShading.striped:
+                            Squiggle().stripe()
+                                .aspectRatio(2, contentMode: .fit)
+                                .padding()
+                        case CardShading.open:
+                            Squiggle().stroke()
+                                .aspectRatio(2, contentMode: .fit)
+                                .padding()
+                        }
+                    }
                 }
             }
         }
-        .foregroundColor(cardColor.rawValue)
+        .foregroundColor(cardColor.color)
     }
-    
     
     /// Cards Domain Count
     enum CardCount: Int {
@@ -61,10 +104,10 @@ struct CardView: View {
     
     /// Card's Domain Color
     struct CardColor {
-        let rawValue: Color
-        static let red = CardColor(rawValue: .red)
-        static let green = CardColor(rawValue: .green)
-        static let blue = CardColor(rawValue: .blue)
+        let color: Color
+        static let red = CardColor(color: .red)
+        static let green = CardColor(color: .green)
+        static let blue = CardColor(color: .blue)
     }
 }
 
