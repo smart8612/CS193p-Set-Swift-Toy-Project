@@ -12,16 +12,16 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
+            let backShape = RoundedRectangle(cornerRadius: 25)
+            
             if card.isChosen {
-                RoundedRectangle(cornerRadius: 25)
-                    .foregroundColor(.gray)
-                    .shadow(color: .accentColor, radius: 20, x: 0.0, y: 0.0)
+                backShape.foregroundColor(.gray)
+                         .shadow(color: .accentColor, radius: 20, x: 0.0, y: 0.0)
             } else {
-                RoundedRectangle(cornerRadius: 25)
-                    .foregroundColor(.white)
+                backShape.foregroundColor(.white)
             }
-            RoundedRectangle(cornerRadius: 25)
-                .strokeBorder(lineWidth: 5)
+            
+            backShape.strokeBorder(lineWidth: 5)
             
             VStack(spacing: 0) {
                 ForEach(0..<card.count.rawValue) { _ in
