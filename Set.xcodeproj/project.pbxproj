@@ -16,7 +16,8 @@
 		C12B9C9526DA1C6200FDC508 /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9C9426DA1C6200FDC508 /* Stripe.swift */; };
 		C12B9C9726DA638F00FDC508 /* Squiggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9C9626DA638E00FDC508 /* Squiggle.swift */; };
 		C179078826DC966900B301F2 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179078726DC966900B301F2 /* ViewExtension.swift */; };
-		C1DB6A8826DD0B980094E770 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB6A8726DD0B980094E770 /* CardView.swift */; };
+		C1DB6A8B26DD32700094E770 /* SetMatchingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB6A8A26DD32700094E770 /* SetMatchingGame.swift */; };
+		C1DB6A8D26DE21560094E770 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB6A8C26DE21560094E770 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +32,9 @@
 		C12B9C9426DA1C6200FDC508 /* Stripe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
 		C12B9C9626DA638E00FDC508 /* Squiggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Squiggle.swift; sourceTree = "<group>"; };
 		C179078726DC966900B301F2 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		C1DB6A8726DD0B980094E770 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		C1DB6A8926DD2B890094E770 /* Set.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Set.entitlements; sourceTree = "<group>"; };
+		C1DB6A8A26DD32700094E770 /* SetMatchingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMatchingGame.swift; sourceTree = "<group>"; };
+		C1DB6A8C26DE21560094E770 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,7 @@
 		C12B9C7926D9DC5C00FDC508 /* Set */ = {
 			isa = PBXGroup;
 			children = (
+				C1DB6A8926DD2B890094E770 /* Set.entitlements */,
 				C12B9C9326DA177900FDC508 /* Extensions */,
 				C12B9C8E26D9E4DE00FDC508 /* ViewModel */,
 				C12B9C8D26D9E4D900FDC508 /* Model */,
@@ -97,7 +101,7 @@
 			children = (
 				C18E245F26DC903A00D4CA49 /* Shape */,
 				C12B9C7C26D9DC5D00FDC508 /* SetGameView.swift */,
-				C1DB6A8726DD0B980094E770 /* CardView.swift */,
+				C1DB6A8C26DE21560094E770 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +117,7 @@
 		C12B9C8E26D9E4DE00FDC508 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C1DB6A8A26DD32700094E770 /* SetMatchingGame.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -205,12 +210,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C12B9C9726DA638F00FDC508 /* Squiggle.swift in Sources */,
+				C1DB6A8D26DE21560094E770 /* CardView.swift in Sources */,
+				C1DB6A8B26DD32700094E770 /* SetMatchingGame.swift in Sources */,
 				C12B9C9026D9E71000FDC508 /* Diamond.swift in Sources */,
 				C12B9C9526DA1C6200FDC508 /* Stripe.swift in Sources */,
 				C179078826DC966900B301F2 /* ViewExtension.swift in Sources */,
 				C12B9C7D26D9DC5D00FDC508 /* SetGameView.swift in Sources */,
 				C12B9C8A26D9DFA400FDC508 /* SetGame.swift in Sources */,
-				C1DB6A8826DD0B980094E770 /* CardView.swift in Sources */,
 				C12B9C7B26D9DC5D00FDC508 /* SetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Set/Set.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Set/Preview Content\"";
 				DEVELOPMENT_TEAM = MLY2NY4CXP;
@@ -351,6 +358,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tistory.singularis7.Set;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -361,6 +369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Set/Set.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Set/Preview Content\"";
 				DEVELOPMENT_TEAM = MLY2NY4CXP;
@@ -373,6 +382,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tistory.singularis7.Set;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
