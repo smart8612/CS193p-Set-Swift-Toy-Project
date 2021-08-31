@@ -12,8 +12,14 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 25)
-                .foregroundColor(.white)
+            if card.isChosen {
+                RoundedRectangle(cornerRadius: 25)
+                    .foregroundColor(.gray)
+                    .shadow(color: .accentColor, radius: 20, x: 0.0, y: 0.0)
+            } else {
+                RoundedRectangle(cornerRadius: 25)
+                    .foregroundColor(.white)
+            }
             RoundedRectangle(cornerRadius: 25)
                 .strokeBorder(lineWidth: 5)
             
@@ -56,6 +62,4 @@ struct CardView: View {
             }
         }
     }
-    
 }
-

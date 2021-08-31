@@ -8,13 +8,17 @@
 import Foundation
 import SwiftUI
 
-class SetMatchingGame {
+class SetMatchingGame: ObservableObject {
     typealias Card = SetGame.Card
     
-    private(set) var model = SetGame()
+    @Published private(set) var model = SetGame()
     
     var cards: [Card] {
         model.cards
+    }
+    
+    func choose(_ card: Card) {
+        model.choose(card)
     }
     
     func getColor(of card: Card) -> Color {

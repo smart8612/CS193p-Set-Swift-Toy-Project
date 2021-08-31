@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SetGameView: View {
-    var game: SetMatchingGame
+    @ObservedObject var game: SetMatchingGame
     
     var body: some View {
         ScrollView {
@@ -17,6 +17,9 @@ struct SetGameView: View {
                     CardView(card: card)
                         .aspectRatio(2/3, contentMode: .fit)
                         .foregroundColor(game.getColor(of: card))
+                        .onTapGesture {
+                            game.choose(card)
+                        }
                 }
             }
         }
