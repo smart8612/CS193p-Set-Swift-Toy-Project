@@ -39,6 +39,12 @@ struct SetGame {
         }
     }
     
+    
+    // Mark - Implement view cards (12)
+    func getCards() -> [Card] {
+        
+    }
+    
     struct Card: Identifiable {
         var id: Int
         
