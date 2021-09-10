@@ -9,15 +9,17 @@ import Foundation
 
 struct SetGame {
     var cards: Array<Card>
+    private var preCards: Array<Card>
     
     init() {
         cards = []
+        preCards = []
         var index = 0
         for count in Card.Count.allCases {
             for shape in Card.Shape.allCases {
                 for shading in Card.Shading.allCases {
                     for color in Card.Color.allCases {
-                        cards.append(SetGame.Card(
+                        preCards.append(SetGame.Card(
                             id: index,
                             count: count,
                             shape: shape,
@@ -28,21 +30,27 @@ struct SetGame {
                 }
             }
         }
+        
+        preCards.shuffle()
+        
+        for _ in 0..<12 {
+            let card = preCards.removeFirst()
+            cards.append(card)
+        }
+        
+        print("카드의 개수: \(cards.count)")
+        print("예비 카드의 개수: \(preCards.count)")
+        print("생성된 총 카드의 수: \(cards.count + preCards.count)")
     }
     
-    mutating func choose(_ card: Card) {
+    // Mark - IsMatched 프로퍼티를 활용하여 카드가 매칭되었는지 확인하는 로직구현
+    mutating func choose (_ card: Card) {
         if let chosenIndex = cards.firstIndex(where: { $0.id == card.id }) {
             cards[chosenIndex].isChosen.toggle()
             print(cards[chosenIndex])
         } else {
             print("Not Exist")
         }
-    }
-    
-    
-    // Mark - Implement view cards (12)
-    func getCards() -> [Card] {
-        
     }
     
     struct Card: Identifiable {
