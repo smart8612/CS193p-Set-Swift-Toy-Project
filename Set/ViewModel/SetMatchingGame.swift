@@ -17,8 +17,16 @@ class SetMatchingGame: ObservableObject {
         model.cards
     }
     
+    var score: Int {
+        model.score
+    }
+    
     func choose(_ card: Card) {
         model.choose(card)
+    }
+    
+    func restart() {
+        model = SetGame()
     }
     
     func getColor(of card: Card) -> Color {

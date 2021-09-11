@@ -10,11 +10,13 @@ import Foundation
 struct SetGame {
     var cards: Array<Card>
     private var preCards: Array<Card>
+    var score: Int
     
     init() {
         /// 카드 배열을 생성한다.
         cards = []
         preCards = []
+        score = 0
         
         /// 예비 카드 배열에 모든 카드 덱을 생성한다.
         var index = 0
@@ -81,19 +83,20 @@ struct SetGame {
                 let thirdCard = cards[indices[2]]
                 
                 // 카드의 각 속성이 모두 동일하거나 다른 경우 즉, 카드가 Set을 만족한 경우
-                if (firstCard.shape == secondCard.shape && secondCard.shape == thirdCard.shape) ||
-                   (firstCard.shape != secondCard.shape && secondCard.shape != thirdCard.shape) ||
-                   (firstCard.color == secondCard.color && secondCard.color == thirdCard.color) ||
-                   (firstCard.color != secondCard.color && secondCard.color != thirdCard.color) ||
-                   (firstCard.count == secondCard.count && secondCard.count == thirdCard.count) ||
-                   (firstCard.count != secondCard.count && secondCard.count != thirdCard.count) ||
-                   (firstCard.shading == secondCard.shading && secondCard.shading == thirdCard.shading) ||
-                   (firstCard.shading != secondCard.shading && secondCard.shading != thirdCard.shading) {
+                if ((firstCard.shape == secondCard.shape && secondCard.shape == thirdCard.shape) ||
+                   (firstCard.shape != secondCard.shape && secondCard.shape != thirdCard.shape)) &&
+                   ((firstCard.color == secondCard.color && secondCard.color == thirdCard.color) ||
+                   (firstCard.color != secondCard.color && secondCard.color != thirdCard.color)) &&
+                   ((firstCard.count == secondCard.count && secondCard.count == thirdCard.count) ||
+                   (firstCard.count != secondCard.count && secondCard.count != thirdCard.count)) &&
+                   ((firstCard.shading == secondCard.shading && secondCard.shading == thirdCard.shading) ||
+                   (firstCard.shading != secondCard.shading && secondCard.shading != thirdCard.shading)) {
                     for i in chosenCards {
                         cards.remove(at: i)
                         cards.insert(preCards.removeFirst(), at: i)
                     }
                     chosenCards.removeAll()
+                    score += 3
                     
                 } else {
                     // 선택된 카드 조합이 set 조건을 만족하지 않는 경우

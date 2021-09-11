@@ -11,19 +11,30 @@ struct SetGameView: View {
     @ObservedObject var game: SetMatchingGame
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
-                ForEach(game.cards) { card in
-                    CardView(card: card)
-                        .aspectRatio(2/3, contentMode: .fit)
-                        .foregroundColor(game.getColor(of: card))
-                        .onTapGesture {
-                            game.choose(card)
-                        }
+        VStack {
+            Text("SetGame").font(.largeTitle)
+            ScrollView {
+                LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
+                    ForEach(game.cards) { card in
+                        CardView(card: card)
+                            .aspectRatio(2/3, contentMode: .fit)
+                            .foregroundColor(game.getColor(of: card))
+                            .onTapGesture {
+                                game.choose(card)
+                            }
+                    }
+                }
+            }
+            HStack {
+                Text("Score: \(game.score)").font(.largeTitle)
+                Spacer()
+                Button(action: { game.restart() }) {
+                    Text("New Game").font(.largeTitle)
                 }
             }
         }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
