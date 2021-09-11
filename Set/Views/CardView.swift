@@ -58,7 +58,7 @@ struct CardView: View {
                     }
                 }
                 .aspectRatio(2, contentMode: .fit)
-                .padding()
+                .padding(12)
             }
         }
     }

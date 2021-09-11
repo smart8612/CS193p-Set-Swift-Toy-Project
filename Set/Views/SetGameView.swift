@@ -13,18 +13,16 @@ struct SetGameView: View {
     var body: some View {
         VStack {
             Text("SetGame").font(.largeTitle)
-            ScrollView {
-                LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
-                    ForEach(game.cards) { card in
-                        CardView(card: card)
-                            .aspectRatio(2/3, contentMode: .fit)
-                            .foregroundColor(game.getColor(of: card))
-                            .onTapGesture {
-                                game.choose(card)
-                            }
+            
+            AspectVGrid(items: game.cards, aspectRatio: 2/3) { card in
+                CardView(card: card)
+                    .padding(3)
+                    .foregroundColor(game.getColor(of: card))
+                    .onTapGesture {
+                        game.choose(card)
                     }
-                }
             }
+                    
             HStack {
                 Text("Score: \(game.score)").font(.largeTitle)
                 Spacer()
