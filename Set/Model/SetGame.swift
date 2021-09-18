@@ -55,6 +55,8 @@ struct SetGame {
     // Mark - IsMatched 프로퍼티를 활용하여 카드가 매칭되었는지 확인하는 로직구현
     mutating func choose (_ card: Card) {
         if let chosenIndex = cards.firstIndex(where: { $0.id == card.id }) {
+            print(cards[chosenIndex])
+            
             // 선택된 카드에 관하여 사용자 의도를 우선 처리한다.
             // 이미 선택된 카드라면
             if cards[chosenIndex].isChosen {
@@ -72,45 +74,49 @@ struct SetGame {
                 
             }
             
-            // 게임 로직: 우선 3가지 조합이 모여서 조건을 검사해야하는 경우
-            if chosenCards.count == 3 {
-                // 집합에 인덱스로 접근할 수 있도록 배열 변환
-                let indices = [Int](chosenCards)
-                
-                // 3개의 카드를 골라서
-                let firstCard = cards[indices[0]]
-                let secondCard = cards[indices[1]]
-                let thirdCard = cards[indices[2]]
-                
-                // 카드의 각 속성이 모두 동일하거나 다른 경우 즉, 카드가 Set을 만족한 경우
-                if ((firstCard.shape == secondCard.shape && secondCard.shape == thirdCard.shape) ||
-                   (firstCard.shape != secondCard.shape && secondCard.shape != thirdCard.shape)) &&
-                   ((firstCard.color == secondCard.color && secondCard.color == thirdCard.color) ||
-                   (firstCard.color != secondCard.color && secondCard.color != thirdCard.color)) &&
-                   ((firstCard.count == secondCard.count && secondCard.count == thirdCard.count) ||
-                   (firstCard.count != secondCard.count && secondCard.count != thirdCard.count)) &&
-                   ((firstCard.shading == secondCard.shading && secondCard.shading == thirdCard.shading) ||
-                   (firstCard.shading != secondCard.shading && secondCard.shading != thirdCard.shading)) {
-                    for i in chosenCards {
-                        cards.remove(at: i)
-                        cards.insert(preCards.removeFirst(), at: i)
-                    }
-                    chosenCards.removeAll()
-                    score += 3
-                    
-                } else {
-                    // 선택된 카드 조합이 set 조건을 만족하지 않는 경우
-                    print("Set을 충족하지 않은 조합입니다.")
-                    for i in chosenCards {
-                        cards[i].isChosen = false
-                    }
-                    chosenCards.removeAll()
-                }
-            }
+            gamelogic(chosenCards)
             
         } else {
             print("선택한 카드가 모델에 존재하지 않습니다.")
             
+        }
+    }
+    
+    private mutating func gamelogic(_ : Set<Int>) {
+        // 게임 로직: 우선 3가지 조합이 모여서 조건을 검사해야하는 경우
+        if chosenCards.count == 3 {
+            // 집합에 인덱스로 접근할 수 있도록 배열 변환
+            let indices = [Int](chosenCards)
+            
+            // 3개의 카드를 골라서
+            let firstCard = cards[indices[0]]
+            let secondCard = cards[indices[1]]
+            let thirdCard = cards[indices[2]]
+            
+            // 카드의 각 속성이 모두 동일하거나 다른 경우 즉, 카드가 Set을 만족한 경우
+            if ((firstCard.shape == secondCard.shape && secondCard.shape == thirdCard.shape) ||
+               (firstCard.shape != secondCard.shape && secondCard.shape != thirdCard.shape)) &&
+               ((firstCard.color == secondCard.color && secondCard.color == thirdCard.color) ||
+               (firstCard.color != secondCard.color && secondCard.color != thirdCard.color)) &&
+               ((firstCard.count == secondCard.count && secondCard.count == thirdCard.count) ||
+               (firstCard.count != secondCard.count && secondCard.count != thirdCard.count)) &&
+               ((firstCard.shading == secondCard.shading && secondCard.shading == thirdCard.shading) ||
+               (firstCard.shading != secondCard.shading && secondCard.shading != thirdCard.shading)) {
+                for i in chosenCards {
+                    cards.remove(at: i)
+                    cards.insert(preCards.removeFirst(), at: i)
+                }
+                chosenCards.removeAll()
+                score += 3
+                
+            } else {
+                // 선택된 카드 조합이 set 조건을 만족하지 않는 경우
+                print("Set을 충족하지 않은 조합입니다.")
+                for i in chosenCards {
+                    cards[i].isChosen = false
+                }
+                chosenCards.removeAll()
+            }
         }
     }
     

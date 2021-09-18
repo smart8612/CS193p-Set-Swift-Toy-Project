@@ -25,3 +25,9 @@ extension Shape {
             .stroke(lineWidth: borderWidth))
     }
 }
+
+extension View {
+    func cardify(isChosen: Bool) -> some View {
+        modifier(Cardify(isChosen: isChosen))
+    }
+}

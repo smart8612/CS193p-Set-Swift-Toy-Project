@@ -17,6 +17,7 @@
 		C12B9C9526DA1C6200FDC508 /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9C9426DA1C6200FDC508 /* Stripe.swift */; };
 		C12B9C9726DA638F00FDC508 /* Squiggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B9C9626DA638E00FDC508 /* Squiggle.swift */; };
 		C173052E26F5816B0050E1CF /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173052D26F5816B0050E1CF /* Pie.swift */; };
+		C173053026F58E720050E1CF /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173052F26F58E720050E1CF /* Cardify.swift */; };
 		C179078826DC966900B301F2 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179078726DC966900B301F2 /* ViewExtension.swift */; };
 		C1DB6A8B26DD32700094E770 /* SetMatchingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB6A8A26DD32700094E770 /* SetMatchingGame.swift */; };
 		C1DB6A8D26DE21560094E770 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB6A8C26DE21560094E770 /* CardView.swift */; };
@@ -35,6 +36,7 @@
 		C12B9C9426DA1C6200FDC508 /* Stripe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
 		C12B9C9626DA638E00FDC508 /* Squiggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Squiggle.swift; sourceTree = "<group>"; };
 		C173052D26F5816B0050E1CF /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		C173052F26F58E720050E1CF /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		C179078726DC966900B301F2 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		C1DB6A8926DD2B890094E770 /* Set.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Set.entitlements; sourceTree = "<group>"; };
 		C1DB6A8A26DD32700094E770 /* SetMatchingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMatchingGame.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				C12B9C7C26D9DC5D00FDC508 /* SetGameView.swift */,
 				C1DB6A8C26DE21560094E770 /* CardView.swift */,
 				C119C10826ECFAE30011CAB1 /* AspectVGrid.swift */,
+				C173052F26F58E720050E1CF /* Cardify.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				C12B9C9026D9E71000FDC508 /* Diamond.swift in Sources */,
 				C12B9C9526DA1C6200FDC508 /* Stripe.swift in Sources */,
 				C179078826DC966900B301F2 /* ViewExtension.swift in Sources */,
+				C173053026F58E720050E1CF /* Cardify.swift in Sources */,
 				C12B9C7D26D9DC5D00FDC508 /* SetGameView.swift in Sources */,
 				C12B9C8A26D9DFA400FDC508 /* SetGame.swift in Sources */,
 				C173052E26F5816B0050E1CF /* Pie.swift in Sources */,

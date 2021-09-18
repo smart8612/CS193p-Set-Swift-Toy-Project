@@ -32,7 +32,6 @@ struct SetGameView: View {
             }
         }
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
