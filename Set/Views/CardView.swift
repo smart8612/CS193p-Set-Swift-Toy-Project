@@ -60,6 +60,13 @@ struct CardView: View {
                 .aspectRatio(2, contentMode: .fit)
                 .padding(12)
             }
+            
+            if card.isChosen {
+                Pie(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: 90-90))
+                    .padding(5)
+                    .opacity(0.7)
+                    .foregroundColor(.primary)
+            }
         }
     }
 }
