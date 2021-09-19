@@ -18,15 +18,22 @@ struct SetGameView: View {
                 CardView(card: card)
                     .padding(3)
                     .foregroundColor(game.getColor(of: card))
+                    .transition(AnyTransition.scale)
                     .onTapGesture {
-                        game.choose(card)
+                        withAnimation {
+                            game.choose(card)
+                        }
                     }
             }
                     
             HStack {
                 Text("Score: \(game.score)").font(.largeTitle)
                 Spacer()
-                Button(action: { game.restart() }) {
+                Button(action: {
+                    withAnimation {
+                        game.restart()
+                    }
+                }) {
                     Text("New Game").font(.largeTitle)
                 }
             }

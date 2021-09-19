@@ -9,8 +9,9 @@ import Foundation
 
 struct SetGame {
     var cards: Array<Card>
-    private var preCards: Array<Card>
     var score: Int
+    private var preCards: Array<Card>
+    private var chosenCards: Set<Int> = []
     
     init() {
         /// 카드 배열을 생성한다.
@@ -50,13 +51,9 @@ struct SetGame {
         print("생성된 총 카드의 수: \(cards.count + preCards.count)")
     }
     
-    private var chosenCards: Set<Int> = []
-    
     // Mark - IsMatched 프로퍼티를 활용하여 카드가 매칭되었는지 확인하는 로직구현
     mutating func choose (_ card: Card) {
         if let chosenIndex = cards.firstIndex(where: { $0.id == card.id }) {
-            print(cards[chosenIndex])
-            
             // 선택된 카드에 관하여 사용자 의도를 우선 처리한다.
             // 이미 선택된 카드라면
             if cards[chosenIndex].isChosen {
@@ -74,7 +71,7 @@ struct SetGame {
                 
             }
             
-            gamelogic(chosenCards)
+            gameLogic(chosenCards)
             
         } else {
             print("선택한 카드가 모델에 존재하지 않습니다.")
@@ -82,7 +79,7 @@ struct SetGame {
         }
     }
     
-    private mutating func gamelogic(_ : Set<Int>) {
+    private mutating func gameLogic(_ : Set<Int>) {
         // 게임 로직: 우선 3가지 조합이 모여서 조건을 검사해야하는 경우
         if chosenCards.count == 3 {
             // 집합에 인덱스로 접근할 수 있도록 배열 변환
@@ -94,18 +91,16 @@ struct SetGame {
             let thirdCard = cards[indices[2]]
             
             // 카드의 각 속성이 모두 동일하거나 다른 경우 즉, 카드가 Set을 만족한 경우
-            if ((firstCard.shape == secondCard.shape && secondCard.shape == thirdCard.shape) ||
-               (firstCard.shape != secondCard.shape && secondCard.shape != thirdCard.shape)) &&
-               ((firstCard.color == secondCard.color && secondCard.color == thirdCard.color) ||
-               (firstCard.color != secondCard.color && secondCard.color != thirdCard.color)) &&
-               ((firstCard.count == secondCard.count && secondCard.count == thirdCard.count) ||
-               (firstCard.count != secondCard.count && secondCard.count != thirdCard.count)) &&
-               ((firstCard.shading == secondCard.shading && secondCard.shading == thirdCard.shading) ||
-               (firstCard.shading != secondCard.shading && secondCard.shading != thirdCard.shading)) {
+            if isPassSetCondition(firstCard, secondCard, thirdCard) {
+                cards[indices[0]].isMatched = true
+                cards[indices[1]].isMatched = true
+                cards[indices[2]].isMatched = true
+                
                 for i in chosenCards {
                     cards.remove(at: i)
                     cards.insert(preCards.removeFirst(), at: i)
                 }
+                
                 chosenCards.removeAll()
                 score += 3
                 
@@ -120,6 +115,13 @@ struct SetGame {
         }
     }
     
+    private func isPassSetCondition(_ firstCard : Card, _ secondCard : Card, _ thirdCard : Card) -> Bool {
+        return Card.checkShape(firstCard, secondCard, thirdCard) &&
+               Card.checkColor(firstCard, secondCard, thirdCard) &&
+               Card.checkCount(firstCard, secondCard, thirdCard) &&
+               Card.checkShading(firstCard, secondCard, thirdCard)
+    }
+    
     struct Card: Identifiable {
         var id: Int
         
@@ -130,6 +132,26 @@ struct SetGame {
         var shape: Shape
         var shading: Shading
         var color: Color
+        
+        internal static func checkShape(_ firstCard : Card, _ secondCard : Card, _ thirdCard : Card) -> Bool {
+            return (firstCard.shape == secondCard.shape && secondCard.shape == thirdCard.shape) ||
+                   (firstCard.shape != secondCard.shape && secondCard.shape != thirdCard.shape)
+        }
+        
+        internal static func checkColor(_ firstCard : Card, _ secondCard : Card, _ thirdCard : Card) -> Bool {
+            return (firstCard.color == secondCard.color && secondCard.color == thirdCard.color) ||
+                   (firstCard.color != secondCard.color && secondCard.color != thirdCard.color)
+        }
+        
+        internal static func checkShading(_ firstCard : Card, _ secondCard : Card, _ thirdCard : Card) -> Bool {
+            return (firstCard.shading == secondCard.shading && secondCard.shading == thirdCard.shading) ||
+                   (firstCard.shading != secondCard.shading && secondCard.shading != thirdCard.shading)
+        }
+        
+        internal static func checkCount(_ firstCard : Card, _ secondCard : Card, _ thirdCard : Card) -> Bool {
+            return (firstCard.count == secondCard.count && secondCard.count == thirdCard.count) ||
+                   (firstCard.count != secondCard.count && secondCard.count != thirdCard.count)
+        }
         
         /// Cards Domain Count
         enum Count: Int, CaseIterable {
